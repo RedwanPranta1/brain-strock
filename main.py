@@ -15,7 +15,7 @@ def user_input_features():
     input_2 = st.sidebar.number_input("Input 2")
     file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
     output = st.sidebar.text_output("output")
-    return {'input_1': input_1, 'input_2': input_2,'output': output 'file': file}
+    return {'input_1': input_1, 'input_2': input_2,'output': output, 'file': file}
 
 user_inputs = user_input_features()
 
