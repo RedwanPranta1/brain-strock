@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import some_processing_module  # Replace with your actual module
-import matplotlib.pyplot as plt
+
 
 # Title and Description
 st.title("Brain Stroke App")
