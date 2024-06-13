@@ -19,7 +19,7 @@ def user_input_features():
 user_inputs = user_input_features()
 
 # Add a button to trigger processing
-if st.button('Process and Display Output'):
+if st.button('Process and Display'):
     if user_inputs['file'] is not None:
         try:
             # Read the uploaded CSV file
