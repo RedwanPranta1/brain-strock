@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import some_processing_module  # type: ignore # Replace with your actual module
-
+import some_processing_module  # Replace with your actual module
+import matplotlib.pyplot as plt
 
 # Title and Description
 st.title("Brain Stroke App")
@@ -13,25 +13,36 @@ st.sidebar.header("User Input Parameters")
 def user_input_features():
     input_1 = st.sidebar.text_input("Input 1")
     input_2 = st.sidebar.number_input("Input 2")
-    file = st.sidebar.file_uploader("Upload your input CSV file", type=["brain_stroke.csv"])
+    file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
     return {'input_1': input_1, 'input_2': input_2, 'file': file}
 
 user_inputs = user_input_features()
 
 if user_inputs['file'] is not None:
-    df = pd.read_csv(user_inputs['file'])
-    st.write("Uploaded Data")
-    st.write(df)
-    
-    # Processing Data
-    processed_result = some_processing_module.process(df, user_inputs['input_1'], user_inputs['input_2'])
-    st.write("Processed Results:")
-    st.write(processed_result)
+    try:
+        # Read the uploaded CSV file
+        df = pd.read_csv(user_inputs['file'])
+        st.write("Uploaded Data")
+        st.write(df)
+        
+        # Validate CSV structure
+        if 'existing_column' not in df.columns:
+            st.error("The CSV file must contain a column named 'existing_column'.")
+        else:
+            try:
+                # Processing Data
+                processed_result = some_processing_module.process(df, user_inputs['input_1'], user_inputs['input_2'])
+                st.write("Processed Results:")
+                st.write(processed_result)
 
-    # Visualization
-    st.write("Visualization:")
-    fig, ax = plt.subplots()
-    ax.plot(processed_result['some_column'])  # Replace with your actual data column
-    st.pyplot(fig)
+                # Visualization
+                st.write("Visualization:")
+                fig, ax = plt.subplots()
+                ax.plot(processed_result['new_column'])  # Replace with your actual data column
+                st.pyplot(fig)
+            except Exception as e:
+                st.error(f"An error occurred during processing: {e}")
+    except Exception as e:
+        st.error(f"Failed to read the uploaded CSV file: {e}")
 else:
     st.write("Please upload a CSV file to proceed.")
