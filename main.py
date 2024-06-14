@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
 
-from sklearn.Gemma import GemmaRegression
+from sklearn.tree import DecisionTreeRegressor
 
-import Gemma
+
+import melbourne_model
 
   
 
@@ -56,15 +57,17 @@ if st.button('Process and Display'):
                         y = processed_result['Stroke']  # Replace with your actual target column
 
                         # Train a simple model (replace with your actual model and training process)
-                        Gemma = LinearRegression()
-                        Gemma.fit(x, y)
-                        predictions = Gemma.predict(X)
-                        processed_result['predictions'] = predictions
+                        Define model. Specify a number for random_state to ensure same results each run
+melbourne_model = DecisionTreeRegressor(random_state=1)
 
-                        st.write("Gemma Coefficients:")
-                        st.write(Gemma.coef_)
-                        st.write("Gemma Intercept:")
-                        st.write(Gemma.intercept_)
+# Fit model
+melbourne_model.fit(X, y)
+
+
+                        st.write("melbourne_model Coefficients:")
+                        st.write(melbourne_model.coef_)
+                        st.write("melbourne_model Intercept:")
+                        st.write(melbourne_model.intercept_)
                         st.write("Predictions:")
                         st.write(predictions)
 
