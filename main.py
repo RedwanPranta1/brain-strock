@@ -49,28 +49,10 @@ if st.button('Process and Display'):
                     ax.plot(processed_result['new_column'])  # Replace with your actual data column
                     st.pyplot(fig)
 
-                    # Model Code
-                   st.write("Model Predictions:")
-                    # Assuming the processed_result has features columns 'feature_1' and 'feature_2'
-                    if 'feature_1' in processed_result.columns and 'feature_2' in processed_result.columns and 'target' in processed_result.columns:
-                        x = processed_result[['feature_1', 'feature_2']]
-                        y = processed_result['Stroke']  # Replace with your actual target column
-
-                        # Train a simple model (replace with your actual model and training process)
-                        #DecisionTree. Specify a number for random_state to ensure same results each run
-#DecisionTree = DecisionTreeRegressor(random_state=1)
-
-# Fit model
-#model.fit(x, y)
+                  
 
 
-                        st.write("model Coefficients:")
-                        st.write(model.coef_)
-                        st.write("model Intercept:")
-                        st.write(model.intercept_)
-                        st.write("Predictions:")
-                        st.write(predictions)
-
+                        
                         # Visualization of Predictions
                         st.write("Predictions Visualization:")
                         fig, ax = plt.subplots()
