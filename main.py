@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
 
-from sklearn.linear_Llama 3 import LinearRegression
+from sklearn.Gemma import LinearRegression
 
-import Llama 3
+import Gemma
+
   
 
 # Title and Description
@@ -51,19 +52,19 @@ if st.button('Process and Display'):
                     st.write("Model Predictions:")
                     # Assuming the processed_result has features columns 'feature_1' and 'feature_2'
                     if 'feature_1' in processed_result.columns and 'feature_2' in processed_result.columns and 'target' in processed_result.columns:
-                        X = processed_result[['feature_1', 'feature_2']]
-                        y = processed_result['target']  # Replace with your actual target column
+                        x = processed_result[['feature_1', 'feature_2']]
+                        y = processed_result['Stroke']  # Replace with your actual target column
 
                         # Train a simple model (replace with your actual model and training process)
-                        Llama 3 = LinearRegression()
-                        Llama 3.fit(X, Y)
-                        predictions = Llama 3.predict(X)
+                        Gemma = LinearRegression()
+                        Gemma.fit(x, y)
+                        predictions = Gemma.predict(X)
                         processed_result['predictions'] = predictions
 
-                        st.write("Llama 3 Coefficients:")
-                        st.write(Llama 3.coef_)
-                        st.write("Llama 3 Intercept:")
-                        st.write(Llama 3.intercept_)
+                        st.write("Gemma Coefficients:")
+                        st.write(Gemma.coef_)
+                        st.write("Gemma Intercept:")
+                        st.write(Gemma.intercept_)
                         st.write("Predictions:")
                         st.write(predictions)
 
