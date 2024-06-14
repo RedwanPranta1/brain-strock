@@ -57,7 +57,7 @@ if st.button('Process and Display'):
                         y = processed_result['Stroke']  # Replace with your actual target column
 
                         # Train a simple model (replace with your actual model and training process)
-                        melbourne_model. Specify a number for random_state to ensure same results each run
+                        DecisionTree. Specify a number for random_state to ensure same results each run
 melbourne_model = DecisionTreeRegressor(random_state=1)
 
 # Fit model
