@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from sklearn.Gemma import LinearRegression
+from sklearn.Gemma import GemmaRegression
 
 import Gemma
 
