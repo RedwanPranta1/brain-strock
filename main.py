@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+
 from sklearn.linear_model import LinearRegression  # Replace with your actual model
 import some_processing_module  # Replace with your actual module
 
