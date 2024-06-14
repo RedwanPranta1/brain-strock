@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from sklearn.tree import DecisionTreeRegressor
+#from sklearn.tree import DecisionTreeRegressor
 
 
 import DecisionTree
