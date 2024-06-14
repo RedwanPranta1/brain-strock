@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-
-import some_processing_module  # Replace with your actual module
+from sklearn.linear_model import LinearRegression
+import some_processing_module  # Ensure this module is available and correct
 
 # Title and Description
 st.title("Brain Stroke App")
@@ -48,29 +48,32 @@ if st.button('Process and Display'):
                     # Model Code
                     st.write("Model Predictions:")
                     # Assuming the processed_result has features columns 'feature_1' and 'feature_2'
-                    X = processed_result[['feature_1', 'feature_2']]
-                    y = processed_result['target']  # Replace with your actual target column
+                    if 'feature_1' in processed_result.columns and 'feature_2' in processed_result.columns and 'target' in processed_result.columns:
+                        X = processed_result[['feature_1', 'feature_2']]
+                        y = processed_result['target']  # Replace with your actual target column
 
-                    # Train a simple model (replace with your actual model and training process)
-                    model = LinearRegression()
-                    model.fit(X, y)
-                    predictions = model.predict(X)
-                    processed_result['predictions'] = predictions
+                        # Train a simple model (replace with your actual model and training process)
+                        model = LinearRegression()
+                        model.fit(X, y)
+                        predictions = model.predict(X)
+                        processed_result['predictions'] = predictions
 
-                    st.write("Model Coefficients:")
-                    st.write(model.coef_)
-                    st.write("Model Intercept:")
-                    st.write(model.intercept_)
-                    st.write("Predictions:")
-                    st.write(predictions)
+                        st.write("Model Coefficients:")
+                        st.write(model.coef_)
+                        st.write("Model Intercept:")
+                        st.write(model.intercept_)
+                        st.write("Predictions:")
+                        st.write(predictions)
 
-                    # Visualization of Predictions
-                    st.write("Predictions Visualization:")
-                    fig, ax = plt.subplots()
-                    ax.plot(processed_result['new_column'], label='Actual')  # Replace with your actual data column
-                    ax.plot(predictions, label='Predicted', linestyle='--')
-                    ax.legend()
-                    st.pyplot(fig)
+                        # Visualization of Predictions
+                        st.write("Predictions Visualization:")
+                        fig, ax = plt.subplots()
+                        ax.plot(processed_result['new_column'], label='Actual')  # Replace with your actual data column
+                        ax.plot(predictions, label='Predicted', linestyle='--')
+                        ax.legend()
+                        st.pyplot(fig)
+                    else:
+                        st.error("The processed data does not contain required columns for the model ('feature_1', 'feature_2', 'target').")
                     
                 except Exception as e:
                     st.error(f"An error occurred during processing: {e}")
