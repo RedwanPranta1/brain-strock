@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+from sklearn.linear_model import LinearRegression
 
 import Llama 3
   
