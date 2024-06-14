@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_Llama 3 import LinearRegression
 
 import Llama 3
   
@@ -55,15 +55,15 @@ if st.button('Process and Display'):
                         y = processed_result['target']  # Replace with your actual target column
 
                         # Train a simple model (replace with your actual model and training process)
-                        model = LinearRegression()
-                        model.fit(X, y)
-                        predictions = model.predict(X)
+                        Llama 3 = LinearRegression()
+                        Llama 3.fit(X, y)
+                        predictions = Llama 3.predict(X)
                         processed_result['predictions'] = predictions
 
-                        st.write("Model Coefficients:")
-                        st.write(model.coef_)
-                        st.write("Model Intercept:")
-                        st.write(model.intercept_)
+                        st.write("Llama 3 Coefficients:")
+                        st.write(Llama 3.coef_)
+                        st.write("Llama 3 Intercept:")
+                        st.write(Llama 3.intercept_)
                         st.write("Predictions:")
                         st.write(predictions)
 
