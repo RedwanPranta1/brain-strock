@@ -61,7 +61,7 @@ if st.button('Process and Display'):
 #DecisionTree = DecisionTreeRegressor(random_state=1)
 
 # Fit model
-model.fit(X, y)
+model.fit(x, y)
 
 
                         st.write("model Coefficients:")
