@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.tree import DecisionTreeRegressor
 
 
-import melbourne_model
+import DecisionTree
 
   
 
@@ -57,7 +57,7 @@ if st.button('Process and Display'):
                         y = processed_result['Stroke']  # Replace with your actual target column
 
                         # Train a simple model (replace with your actual model and training process)
-                        Define model. Specify a number for random_state to ensure same results each run
+                        melbourne_model. Specify a number for random_state to ensure same results each run
 melbourne_model = DecisionTreeRegressor(random_state=1)
 
 # Fit model
