@@ -56,7 +56,7 @@ if st.button('Process and Display'):
 
                         # Train a simple model (replace with your actual model and training process)
                         Llama 3 = LinearRegression()
-                        Llama 3.fit(X, y)
+                        Llama 3.fit(X, Y)
                         predictions = Llama 3.predict(X)
                         processed_result['predictions'] = predictions
 
@@ -70,7 +70,7 @@ if st.button('Process and Display'):
                         # Visualization of Predictions
                         st.write("Predictions Visualization:")
                         fig, ax = plt.subplots()
-                        ax.plot(processed_result['new_column'], label='Actual')  # Replace with your actual data column
+                        ax.plot(processed_result['new_column'], label='Stroke')  # Replace with your actual data column
                         ax.plot(predictions, label='Predicted', linestyle='--')
                         ax.legend()
                         st.pyplot(fig)
