@@ -58,7 +58,7 @@ if st.button('Process and Display'):
 
                         # Train a simple model (replace with your actual model and training process)
                         DecisionTree. Specify a number for random_state to ensure same results each run
-melbourne_model = DecisionTreeRegressor(random_state=1)
+DecisionTree = DecisionTreeRegressor(random_state=1)
 
 # Fit model
 melbourne_model.fit(X, y)
