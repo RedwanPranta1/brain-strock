@@ -50,7 +50,7 @@ if st.button('Process and Display'):
                     st.pyplot(fig)
 
                     # Model Code
-                    st.write("Model Predictions:")
+                   st.write("Model Predictions:")
                     # Assuming the processed_result has features columns 'feature_1' and 'feature_2'
                     if 'feature_1' in processed_result.columns and 'feature_2' in processed_result.columns and 'target' in processed_result.columns:
                         x = processed_result[['feature_1', 'feature_2']]
@@ -61,7 +61,7 @@ if st.button('Process and Display'):
 #DecisionTree = DecisionTreeRegressor(random_state=1)
 
 # Fit model
-model.fit(x, y)
+#model.fit(x, y)
 
 
                         st.write("model Coefficients:")
