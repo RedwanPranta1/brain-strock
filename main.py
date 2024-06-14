@@ -61,13 +61,13 @@ if st.button('Process and Display'):
 #DecisionTree = DecisionTreeRegressor(random_state=1)
 
 # Fit model
-melbourne_model.fit(X, y)
+model.fit(X, y)
 
 
-                        st.write("melbourne_model Coefficients:")
-                        st.write(melbourne_model.coef_)
-                        st.write("melbourne_model Intercept:")
-                        st.write(melbourne_model.intercept_)
+                        st.write("model Coefficients:")
+                        st.write(model.coef_)
+                        st.write("model Intercept:")
+                        st.write(model.intercept_)
                         st.write("Predictions:")
                         st.write(predictions)
 
