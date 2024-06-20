@@ -32,7 +32,7 @@ if st.button('Process and Display'):
             else:
                 try:
                     # Processing Data
-                    processed_result = some_processing_module.process(df, user_inputs['input_1'], user_inputs['input_2'])
+                    processed_result = DecisionTree.process(df, user_inputs['input_1'], user_inputs['input_2'])
                     st.write("Processed Results:")
                     st.write(processed_result)
 
