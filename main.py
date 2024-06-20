@@ -1,26 +1,21 @@
 import streamlit as st
 import pandas as pd
+import some_processing_module  # Replace with your actual module
 
-#from sklearn.tree import DecisionTreeRegressor
-
-
-import DecisionTree
-
-  
 
 # Title and Description
 st.title("Brain Stroke App")
-st.write("This app processes and visualizes your data related to brain stroke analysis.")
+st.write("This app processes and visualizes your data.")
 
 # Sidebar for User Inputs
 st.sidebar.header("User Input Parameters")
 
 def user_input_features():
     input_1 = st.sidebar.text_input("Input 1")
-    input_2 = st.sidebar.number_input("Input 2", value=0)
+    input_2 = st.sidebar.number_input("Input 2")
     file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
     
-    return {'input_1': input_1, 'input_2': input_2, 'file': file}
+    return {'input_1': input_1, 'input_2': input_2,'file': file}
 
 user_inputs = user_input_features()
 
@@ -48,21 +43,6 @@ if st.button('Process and Display'):
                     fig, ax = plt.subplots()
                     ax.plot(processed_result['new_column'])  # Replace with your actual data column
                     st.pyplot(fig)
-
-                  
-
-
-                        
-                        # Visualization of Predictions
-                        st.write("Predictions Visualization:")
-                        fig, ax = plt.subplots()
-                        ax.plot(processed_result['new_column'], label='Stroke')  # Replace with your actual data column
-                        ax.plot(predictions, label='Predicted', linestyle='--')
-                        ax.legend()
-                        st.pyplot(fig)
-                    else:
-                        st.error("The processed data does not contain required columns for the model ('feature_1', 'feature_2', 'target').")
-                    
                 except Exception as e:
                     st.error(f"An error occurred during processing: {e}")
         except Exception as e:
