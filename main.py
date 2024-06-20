@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
-import some_processing_module  # Replace with your actual module
-
-
+import DecisionTree
 # Title and Description
 st.title("Brain Stroke App")
 st.write("This app processes and visualizes your data.")
